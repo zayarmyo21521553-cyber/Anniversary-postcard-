@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>3rd Anniversary</title>
+<style>
+  * { margin:0; padding:0; box-sizing: border-box; }
+  body { font-family: Arial, sans-serif; text-align: center; background-color: pink; }
+
+  .parent, .section2, .section3 {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+  }
+
+  .first {
+    background-color: #ff6b81; 
+    width: 95%; max-width: 350px;
+    margin: 10px; 
+    padding: 15px; 
+    font-size: 14px; 
+    border-radius: 10px; 
+    color: #fff;
+  }
+
+  .second {
+    background-color: rgba(175, 255, 64, 0.4);
+    width: 95%; max-width: 325px;
+    margin: 20px 0; 
+    padding: 15px; 
+    font-size: 13px; 
+    font-style: italic; 
+    border-radius: 5px; 
+    letter-spacing: 1.2px;
+    color: #000;
+  }
+
+  .first1 { font-style: italic; font-weight: bold; margin-bottom:5px; }
+  .first2 { font-style: italic; font-weight: bold; margin-bottom:5px; }
+
+  button { 
+    padding: 10px 18px; 
+    background: #dfaaff; 
+    color: black; 
+    border: none; 
+    border-radius: 6px; 
+    font-style: italic; 
+    cursor: pointer; 
+    margin: 5px; 
+    transition: background 0.3s;
+  }
+  button:hover { background: #ffb6c1; }
+
+  .section2 .image img { max-width: 95%; height: auto; margin-top: 15px; border-radius: 10px; }
+
+  .nandar {
+    font-style: italic;
+    background-color: #ffe6f0;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .video-wrapper video {
+    width: 95%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- Section 1 -->
+<div class="parent">
+  <div class="first">
+    <h1 class="first1">🌸 To My Forever Love 🌸 </h1>
+    <h2 class="first2">💌 Happy 3 years anniversary 💌</h2>
+  </div>
+
+  <div class="second">
+    <h1>My Dearest Love,</h1>
+    <p>
+      As I write to you today, my heart overflows with love and memories…
+      I truly wondered where I should even start. That's because ever since the day you entered my life, you've never stopped giving me new pages, new chapters, and new stories to write.
+
+      Three years might sound like a long journey. But every moment with you feels like a story unfolding in every second. From the breakfasts we've shared together to the little household items we've bought side-by-side, from the few times we've argued to every single moment we've laughed together—each one is, to me, like a golden rose.
+
+      Every time I look at you, this is what my heart feels: "This person...It's her... The one I want to be my first hello... The one I want to be my last goodbye... The one who understands, accepts, and loves all that I am..."
+
+      Three years is not a record to be broken. It is a day to renew our promises to continue this journey together. I know we have many more years ahead of us to traverse. But any path is one I want to take, as long as you are the one guiding me.
+
+      Thank you... Thank you for making me love myself more... Thank you for filling my life with light... Thank you for becoming my home...
+
+      For many more years to come, I want to walk forward, holding your hand. I look forward to the days where I will see your shadow beside mine, stretching long into the future.
+    </p>
+
+    <h2>Forever yours,</h2>
+    <button onclick="showSection('section2')">Open My Heart 💖</button>
+    <button onclick="showSection('section3')">Open My Heart (II) 💝</button>
+  </div>
+</div>
+
+<!-- Section 2 -->
+<div id="section2" class="section2" style="display:none;">
+  <div class="image">
+    <a href="https://freeimage.host/i/K5ZYxkb">
+      <img src="https://iili.io/K5ZYxkb.md.png" alt="K5ZYxkb.md.png">
+    </a>
+  </div>
+  <button onclick="showSection('parent')">Back</button>
+</div>
+
+<!-- Section 3 -->
+<div id="section3" class="section3" style="display:none;">
+  <div class="nandar">
+    <h1>
+"I captured pieces of our story in a video—every laugh, every glance, every reason you have my heart. This is for you."
+    </h1>
+  </div>
+  <div class="video-wrapper">
+    <video id="nandarVideo" controls autoplay muted>
+      <source src="Nandarlin.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  <button onclick="showSection('parent')">Back</button>
+</div>
+
+<script>
+function showSection(id){
+  const video = document.getElementById('nandarVideo');
+
+  if(id === 'parent'){
+    // Stop video when going back
+    video.pause();
+    video.currentTime = 0;
+  }
+
+  document.querySelectorAll('.parent, .section2, .section3').forEach(s => s.style.display='none');
+  if(id === 'parent') document.querySelector('.parent').style.display='flex';
+  else document.getElementById(id).style.display='flex';
+}
+</script>
+
+</body>
+</html>
